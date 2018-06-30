@@ -136,8 +136,9 @@ class Category
      */
     protected function getCategoryByPath($path)
     {
+        $store_code = 'main_website_store'; // Also try: default or base
         $store = $this->storeFactory->create();
-        $store->load('venia_us');
+        $store->load($store_code);
         $rootCatId = $store->getGroup()->getDefaultStore()->getRootCategoryId();
         $names = array_filter(explode('/', $path));
         $tree = $this->getTree($rootCatId);
