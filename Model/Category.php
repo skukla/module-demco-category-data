@@ -204,16 +204,16 @@ class Category
      */
     protected function createCategory($row)
     {
-        $category = $this->getCategoryByPath($row['store_view_code'], htmlentities($row['path']) . '/' . $row['name']);
+        $category = $this->getCategoryByPath($row['store_view_code'], $row['path'] . '/' . $row['name']);
         if (!$category) {
-          $parentCategory = $this->getCategoryByPath($row['store_view_code'], htmlentities($row['path']));
+          $parentCategory = $this->getCategoryByPath($row['store_view_code'], $row['path']);
           $data = [
             'parent_id' => $parentCategory->getId(),
-            'name' => htmlentities($row['name']),
+            'name' => $row['name'],
             'is_active' => $row['active'],
             'is_anchor' => $row['is_anchor'],
             'include_in_menu' => $row['include_in_menu'],
-            'url_key' => htmlentities($row['url_key']),
+            'url_key' => $row['url_key'],
             'store_id' => 0
           ];
           $category = $this->categoryFactory->create();
