@@ -136,7 +136,7 @@ class Category
      */
     protected function getCategoryByPath($path)
     {
-        $store_code = 'main_website_store'; // Also try: default or base
+        $store_code = 'default'; // Also try: base
         $store = $this->storeFactory->create();
         $store->load($store_code);
         $rootCatId = $store->getGroup()->getDefaultStore()->getRootCategoryId();
