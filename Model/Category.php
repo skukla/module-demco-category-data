@@ -206,12 +206,10 @@ class Category
     protected function createCategory($row)
     {
         $category = $this->getCategoryByPath($row['path'] . '/' . $row['name']);
+        echo "Category is: $category";
+        die();
         if (!$category) {
             $parentCategory = $this->getCategoryByPath($row['path']);
-
-            echo "Parent Category is: $parentCategory";
-            die();
-
             $data = [
                 'parent_id' => $parentCategory->getId(),
                 'name' => $row['name'],
