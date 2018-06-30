@@ -205,6 +205,7 @@ class Category
      */
     protected function createCategory($row)
     {
+        print_r($row);
         $category = $this->getCategoryByPath($row['path'] . '/' . $row['name']);
         echo "Category is:" . $category;
         if (!$category) {
