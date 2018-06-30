@@ -1,4 +1,8 @@
 name,url_key,path,active,is_anchor,include_in_menu,position,page_layout,display_mode,landing_page,custom_layout_update
 Products,products,,1,1,1,1,,,,
 Archival,archival,Products,1,1,1,1,,,,
-AV Storage,av-storage,Products/Archival,1,1,1,2,,,,
+AV Storage,av-storage,Products/Archival,1,1,1,1,,,,
+Conservation,conservation,Products/Archival,1,1,1,2,,,,
+Document Storage,document-storage,Products/Archival,1,1,1,3,,,,
+Microfilm & Microfiche,microfilm-microfiche,Products/Archival,1,1,1,4,,,,
+Pamphlet Protection,pamphlet-protection,Products/Archival,1,1,1,5,,,,
