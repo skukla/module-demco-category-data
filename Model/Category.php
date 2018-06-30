@@ -134,9 +134,8 @@ class Category
      * @param string $path
      * @return \Magento\Framework\Data\Tree\Node
      */
-    protected function getCategoryByPath($path)
+    protected function getCategoryByPath($store_view_code, $path)
     {
-        $store_view_code = 'default';
         $store = $this->storeFactory->create();
         $store->load($store_view_code);
         $rootCatId = $store->getGroup()->getDefaultStore()->getRootCategoryId();
@@ -205,9 +204,9 @@ class Category
      */
     protected function createCategory($row)
     {
-        $category = $this->getCategoryByPath($row['path'] . '/' . $row['name']);
-        if (!$category || $row['path'] == "Default Category") {
-          $parentCategory = $this->getCategoryByPath($row['path']);
+        $category = $this->getCategoryByPath($row['store_view_code'], $row['path'] . '/' . $row['name']);
+        if (!$category) {
+          $parentCategory = $this->getCategoryByPath($row['store_view_code'], $row['path']);
           $data = [
             'parent_id' => $parentCategory->getId(),
             'name' => $row['name'],
