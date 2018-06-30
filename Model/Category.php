@@ -205,29 +205,25 @@ class Category
      */
     protected function createCategory($row)
     {
-        print_r($row);
         $category = $this->getCategoryByPath($row['path'] . '/' . $row['name']);
-        echo "Category is:" . $category;
-        if (!$category) {
+        if (!$category || $row['path'] == "Default Category") {
           $parentCategory = $this->getCategoryByPath($row['path']);
-          echo "Parent category is: ";
-          echo $parentCategory;
-            $data = [
-                'parent_id' => $parentCategory->getId(),
-                'name' => $row['name'],
-                'is_active' => $row['active'],
-                'is_anchor' => $row['is_anchor'],
-                'include_in_menu' => $row['include_in_menu'],
-                'url_key' => $row['url_key'],
-                'store_id' => 0
-            ];
-            $category = $this->categoryFactory->create();
-            $category->setData($data)
+          $data = [
+            'parent_id' => $parentCategory->getId(),
+            'name' => $row['name'],
+            'is_active' => $row['active'],
+            'is_anchor' => $row['is_anchor'],
+            'include_in_menu' => $row['include_in_menu'],
+            'url_key' => $row['url_key'],
+            'store_id' => 0
+          ];
+          $category = $this->categoryFactory->create();
+          $category->setData($data)
                 ->setPath($parentCategory->getData('path'))
                 ->setAttributeSetId($category->getDefaultAttributeSetId());
-            $this->setAdditionalData($row, $category);
+          $this->setAdditionalData($row, $category);
 
-            $category->save();
+          $category->save();
 
         }
     }
