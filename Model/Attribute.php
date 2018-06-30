@@ -3,7 +3,7 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Kukla_SampleDataBuilder\Model;
+namespace Kukla\SampleDataBuilder\Model;
 
 use Magento\Framework\Setup\SampleData\Context as SampleDataContext;
 use Magento\Store\Model\StoreManagerInterface;
