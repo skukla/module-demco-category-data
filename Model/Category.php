@@ -207,8 +207,6 @@ class Category
     {
         $category = $this->getCategoryByPath($row['path'] . '/' . $row['name']);
         if (!$category) {
-            echo "Category is: $category";
-            die();
             $parentCategory = $this->getCategoryByPath($row['path']);
             $data = [
                 'parent_id' => $parentCategory->getId(),
