@@ -111,7 +111,6 @@ class Category
             'display_mode',
             'page_layout',
             'custom_layout_update',
-            'look_book_main_image',
             'description',
             'landing_page'
         ];
@@ -120,7 +119,8 @@ class Category
             if (!empty($row[$categoryAttribute])) {
                 if($categoryAttribute == 'landing_page'){
                     $attributeData = [$categoryAttribute => $this->getCmsBlockId($row[$categoryAttribute])];
-                }else {
+                }
+                else {
                     $attributeData = [$categoryAttribute => $row[$categoryAttribute]];
                 }
                 $category->addData($attributeData);

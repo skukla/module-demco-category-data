@@ -59,7 +59,7 @@ class Installer implements Setup\SampleData\InstallerInterface
         // add categories
         $this->categorySetup->install(['Kukla_SampleDataBuilder::fixtures/categories.csv']);
 
-        //reIndex as MECE redeploy will not automatically reindex
+        // reIndex as MECE redeploy will not automatically reindex
         $this->index->reindexAll();
     }
 }
