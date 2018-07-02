@@ -3,7 +3,7 @@
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Kukla\SampleDataBuilder\Model;
+namespace ZT\DemcoCategoryData\Model;
 
 use Magento\Framework\Setup\SampleData\Context as SampleDataContext;
 

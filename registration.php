@@ -6,4 +6,4 @@
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Kukla_SampleDataBuilder', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'ZT_DemcoCategoryData', __DIR__);

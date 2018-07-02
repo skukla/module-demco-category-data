@@ -1,5 +1,5 @@
 {
-    "name": "kukla/module-sample-data-builder",
+    "name": "zt/module-demco-category-data",
     "type": "magento2-module",
     "require": {
         "magento/framework": "*",
