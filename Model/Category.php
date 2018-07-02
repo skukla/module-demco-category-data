@@ -112,12 +112,12 @@ class Category
             'page_layout',
             'custom_layout_update',
             'description',
-            'cms_block'
+            'landing_page'
         ];
 
         foreach ($additionalAttributes as $categoryAttribute) {
             if (!empty($row[$categoryAttribute])) {
-                if($categoryAttribute == 'cms_block'){
+                if($categoryAttribute == 'landing_page'){
                     $attributeData = [$categoryAttribute => $this->getCmsBlockId($row[$categoryAttribute])];
                 }
                 else {
